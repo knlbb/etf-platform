@@ -28,10 +28,13 @@ function Ticker() {
                 <div style={{display:'flex'}}>
                     {tickers.map((ticker) => {
                             return(
-                                <div key={ticker.ind} style={{height:100, aspectRatio:2, borderWidth:1, borderColor: 'rgba(255,255,255,0.1)', borderRadius:20, padding:10, margin:10}}>
+                                <div key={ticker.ind} style={{height:100, aspectRatio:2, borderWidth:1, borderColor: 'rgba(0,0,0,0.1)', borderRadius:20, padding:10, margin:10}}>
                                     <div style={{width:'100%', height:30,  alignItems:'center', display:'flex',marginTop:10}}>
                                         <img src={ticker.logo} alt="ticker-symbol"  style={{height:30, float: 'left', aspectRatio:1, margin: 10, }}/>
                                         <h1>{ticker.name}</h1>
+                                    </div>
+                                    <div>
+                                        Proce
                                     </div>
                                 </div>
                             )

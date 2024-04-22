@@ -2,14 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  color: white;
+/* body { */
+  /* color: white; */
   /* background: linear-gradient(to bottom,rgb(17,13,45),rgb(9,10,34)); */
-  background: rgb(9,10,34);
-  height: 100%;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-}
+  /* background: rgb(9,10,34); */
+  /* height: 100%; */
+  /* background-repeat: no-repeat; */
+  /* background-attachment: fixed; */
+/* } */
 
 /* Make it a marquee */
 .marquee {

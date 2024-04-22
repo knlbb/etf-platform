@@ -4,7 +4,6 @@ export default function Home() {
   return (
     <>
       <Ticker/>
-      <h1>Hello</h1>
     </>
   );
 }
