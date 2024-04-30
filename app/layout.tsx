@@ -7,6 +7,7 @@ import Header from "@/components/header";
 import Sidebar from "@/components/Sidebar";
 import PageWrapper from "@/components/page-wrapper";
 import MarginWidthWrapper from "@/components/margin-width-wrapper";
+import Login from "./login/page";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -20,20 +21,25 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+
+  const loggenIn = true
+
   return (
     <html lang="en">
       <body className={inter.className}>
         {/* <Navbar/> */}
         <div className="flex">
+          {loggenIn ? (
+            <>
           <Sidebar/>
           <main className="flex-1">
-          <MarginWidthWrapper>
-            <Header/>
-            {/* <HeaderMobile/> */}
-            <PageWrapper>{children}</PageWrapper>
-            {/* <Footer/> */}
-          </MarginWidthWrapper>
+            <MarginWidthWrapper>
+              <Header/>
+              <PageWrapper>{children}</PageWrapper>
+            </MarginWidthWrapper>
           </main>
+          </>
+          ) : (<Login/>)}
         </div>
       </body>
     </html>

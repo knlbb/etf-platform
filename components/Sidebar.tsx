@@ -11,20 +11,34 @@ import { Icon } from '@iconify/react';
 
 function Sidebar() {
   return (
-    <div className="md:w-60 bg-white h-screen flex-1 fixed border-r border-zinc-200 hidden md:flex">
+    <div className="md:min-w-[20%] right-0 bg-[#f2f6fe] h-screen flex-1 fixed hidden md:flex">
       <div className="flex flex-col space-y-6 w-full mx-5">
-        <div className="flex flex-row space-x-3 items-center justify-center md:justify-start md:px-6 border-b border-zinc-200 h-16 w-full">
-          <i className='h-7 w-7 bg-zinc-300 rounded-lg cursor-pointer'>
-                <img src="https://images-platform.99static.com//X0F3CDfCL6LcdPsSJNtRXSGn86Q=/108x1101:902x1895/fit-in/500x500/99designs-contests-attachments/126/126736/attachment_126736972" alt="" className='rounded-lg'  style={{height:'100%',  }}/>
-            </i>
-          <span className="font-bold text-md hidden md:flex">ETF Platform</span>
+        <div className="flex flex-row space-x-3 items-center justify-center md:justify-start md:px-6 border-b border-[#e7ecf5] h-24 w-full">
+          {/* <i className='h-7 w-7   rounded-lg cursor-pointer'> */}
+              {/* <img src="https://images-platform.99static.com//X0F3CDfCL6LcdPsSJNtRXSGn86Q=/108x1101:902x1895/fit-in/500x500/99designs-contests-attachments/126/126736/attachment_126736972" alt="" className='rounded-lg'  style={{height:'100%',  }}/> */}
+              {/* <Icon icon="mdi:bell-notification-outline" width="24" height="24" color='black' style={{color:'#fff'}} /> */}
+              {/* <Icon icon="mdi:bell-notification" width="100%" height="100%" /> */}
+          {/* </i> */}
+          <span className="text-md text-[#4f588c] right-10 absolute hidden md:flex">email@email.com</span>
         </div>
 
-        <div className="flex flex-col space-y-2  md:px-6 ">
+        {/* <div className="flex flex-col space-y-2  md:px-6 ">
           {SIDENAV_ITEMS.map((item, idx) => {
             return <MenuItem key={idx} item={item} />;
           })}
+        </div> */}
+        <div className='bg-white rounded-2xl p-5 flex'>
+          <img src="https://icons.iconarchive.com/icons/cjdowner/cryptocurrency-flat/512/Ethereum-ETH-icon.png" className='w-12 h-12'/>
+          <div className='ml-5'>
+            <h1 className='text-[#c5cade] mt-0 pt-0 font-semibold mb-2 text-xs'>Balance</h1>
+            <h1 className='font-bold text-[#525a8e] mt-0 pt-0 text-lg'>1231 ETH</h1>
+          </div>
         </div>
+      </div>
+
+      <div className='w-12 aspect-square cursor-pointer bg-black p-2 absolute flex right-5 rounded-full bottom-5 justify-center items-center'>
+        {/* <img src="https://www.svgrepo.com/show/192522/customer-service-support.svg" alt="" className='rounded-2xl' /> */}
+        <Icon icon="bx:support" className='text-white hover:text-red-800' width="100%" height="100%" />
       </div>
     </div>
   )

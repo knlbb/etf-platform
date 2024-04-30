@@ -1,9 +1,8 @@
-import Ticker from "@/components/Ticker"
-
+import Login from "./login/page";
 export default function Home() {
   return (
-    <>
-      <Ticker/>
-    </>
+    <Login/>
   );
 }
+
+
