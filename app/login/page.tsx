@@ -1,9 +1,13 @@
 import Link from 'next/link'
 import React from 'react'
+import { redirect } from 'next/navigation'
 
 function Login() {
+    if (process.env.LOGGED_IN === "true"){
+        redirect('dashboard')
+    }
   return (
-    <div className='justify-center bg-[#f7faff] flex flex-col items-center w-full h-screen'>
+        <div className='justify-center bg-[#f7faff] flex flex-col items-center w-full h-screen'>
 
         <img src='https://play-lh.googleusercontent.com/Fh6qQqnzTc1PctcLekAHWG2WqnzCFbAwGYEdA48rVdwAso5Ws4CCe54IUylGEb-F8I8' className='w-12 top-24 absolute rounded-2xl h-12'/>
 
@@ -41,7 +45,6 @@ function Login() {
                 </form>
             </div>
     </div>
-
   )
 }
 

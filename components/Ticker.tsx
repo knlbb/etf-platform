@@ -87,12 +87,6 @@ function Ticker() {
   )
 }
 
-export const getServerSideProps = () => {
-    console.log(process.env["X-CMC_PRO_API_KEY"]?.charAt(0));
-  
-    return {
-        props: {},
-    }
-  }
+
 
 export default Ticker

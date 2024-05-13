@@ -3,7 +3,7 @@ import React from 'react'
 export default function Deposit() {
   return (
     <div className='flex justify-center'>
-      <div className='md:w-1/3 sm:w-[90%] p-5 items-center flex flex-col bg-white rounded-2xl shadow-md'>
+      <div className='lg:w-96 sm:w-96 p-5 items-center flex flex-col bg-white rounded-2xl shadow-md'>
         <h1 className='font-semibold text-xl mt-5'>Deposit</h1>
         <button type="button" className="inline-flex justify-center gap-x-1.5 rounded-md mt-5 py-2 text-sm font-semibold text-gray-900 border px-3 hover:text-gray-500" id="menu-button" aria-expanded="true" aria-haspopup="true">
           USDT

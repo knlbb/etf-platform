@@ -11,7 +11,7 @@ import { Icon } from '@iconify/react';
 
 function Sidebar() {
   return (
-    <div className="md:min-w-[20%] right-0 bg-[#f2f6fe] h-screen flex-1 fixed hidden md:flex">
+    <div className="lg:min-w-96 md:hidden right-0 bg-[#f2f6fe] h-screen flex-1 fixed hidden lg:flex">
       <div className="flex flex-col space-y-6 w-full mx-5">
         <div className="flex flex-row space-x-3 items-center justify-center md:justify-start md:px-6 border-b border-[#e7ecf5] h-24 w-full">
           {/* <i className='h-7 w-7   rounded-lg cursor-pointer'> */}

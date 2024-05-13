@@ -29,7 +29,7 @@ const Header = () => {
           </Link> */}
           <img src='https://play-lh.googleusercontent.com/Fh6qQqnzTc1PctcLekAHWG2WqnzCFbAwGYEdA48rVdwAso5Ws4CCe54IUylGEb-F8I8' className='w-12 rounded-2xl absolute left-12 h-12'/>
 
-          <div className='flex flex-row space-x-3 items-center text-center justify-center '>
+          <div className='flex flex-row space-x-3 sm:hidden lg:flex md:flex xs:hidden items-center text-center justify-center '>
             {SIDENAV_ITEMS.map((item, idx) => {
               return <MenuItem key={idx} item={item} />;
             })}

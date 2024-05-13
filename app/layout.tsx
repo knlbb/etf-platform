@@ -22,14 +22,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
 
-  const loggenIn = true
 
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={inter.className} style={{overflow: 'hidden'}}>
         {/* <Navbar/> */}
         <div className="flex">
-          {loggenIn ? (
+          {process.env.LOGGED_IN === "true" ? (
             <>
           <Sidebar/>
           <main className="flex-1">

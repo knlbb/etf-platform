@@ -1,5 +1,6 @@
 import React from 'react'
-import Ticker from "@/components/Ticker"
+import Ticker from "@/components/Ticker2"
+import { redirect } from 'next/navigation'
 
 const etfInfo = [
     {
@@ -32,6 +33,10 @@ const etfInfo = [
 ]
 
 function Dashboard() {
+  
+  if (process.env.LOGGED_IN === "false"){
+    redirect('login')
+  }
   return (
     <div>
       {/* <h1 className="text-2xl font-bold mb-3">Main Dashboard</h1>    */}
@@ -68,7 +73,7 @@ function Dashboard() {
           </div> */}
         {/* </div> */}
 
-        <div className="w-full bg-white border rounded-xl">
+        <div className="w-full  bg-white border rounded-xl">
           <header className="px-5 py-4 ">
               {/* <h2 className="font-semibold text-gray-800">Customers</h2> */}
               <div>
@@ -90,7 +95,7 @@ function Dashboard() {
                     <th className="p-2 whitespace-nowrap">
                         <div className="font-semibold text-left">Symbol</div>
                     </th>
-                    <th className="p-2 whitespace-nowrap">
+                    <th className="p-2 sm:hidden md:inline whitespace-nowrap">
                         <div className="font-semibold text-left">Coin</div>
                     </th>
                     <th className="p-2 whitespace-nowrap">
@@ -120,7 +125,7 @@ function Dashboard() {
                                 <div className="font-medium text-gray-800">{i.symbol}</div>
                             </div>
                         </td>
-                        <td className="p-2 whitespace-nowrap">
+                        <td className="p-2 sm:hidden md:inline whitespace-nowrap">
                             <div className="text-left">{i.coin}</div>
                         </td>
                         <td className="p-2 whitespace-nowrap">
@@ -133,7 +138,9 @@ function Dashboard() {
                             <div className="text-left font-medium ">{i.marketCap}</div>
                         </td>
                         <td className="p-2 whitespace-nowrap">
-                            <div className="text-lg text-center">🇺🇸</div>
+                            {/* <div className="text-lg text-center">🇺🇸</div> */}
+                            <div className="text-lg flex justify-center text-center"><img src="https://miro.medium.com/v2/resize:fit:793/1*sRlmmFjU2hH0e7n4vqF4QA.png" className='w-auto h-12'/></div>
+
                         </td>
                     </tr>)
                 })}
