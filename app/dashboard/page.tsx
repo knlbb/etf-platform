@@ -32,6 +32,7 @@ const etfInfo = [
     },
 ]
 
+
 function Dashboard() {
   
   if (process.env.LOGGED_IN === "false"){
@@ -40,7 +41,7 @@ function Dashboard() {
   return (
     <div>
       {/* <h1 className="text-2xl font-bold mb-3">Main Dashboard</h1>    */}
-      <Ticker/>
+      {/* <Ticker/> */}
 
         {/* <div className="w-[20%] mb-5 aspect-square bg-white border rounded-xl">
             

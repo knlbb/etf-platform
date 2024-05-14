@@ -29,7 +29,7 @@ const Header = () => {
           </Link> */}
           <img src='https://play-lh.googleusercontent.com/Fh6qQqnzTc1PctcLekAHWG2WqnzCFbAwGYEdA48rVdwAso5Ws4CCe54IUylGEb-F8I8' className='w-12 rounded-2xl absolute left-12 h-12'/>
 
-          <div className='flex flex-row space-x-3 sm:hidden lg:flex md:flex xs:hidden items-center text-center justify-center '>
+          <div className='hidden flex-row space-x-3 sm:hidden lg:flex md:flex items-center text-center justify-center '>
             {SIDENAV_ITEMS.map((item, idx) => {
               return <MenuItem key={idx} item={item} />;
             })}
@@ -61,12 +61,21 @@ const Header = () => {
             <span className='font-semibold text-sm'>Log In</span>
           </button>
         </div> */}
-          <i className='h-10 w-10 hover:text-red-700 rounded-lg flex right-12 absolute cursor-pointer'>
+          <i className='h-10 w-10 hidden lg:flex hover:text-red-700 rounded-lg  right-12 absolute cursor-pointer'>
               {/* <img src="https://images-platform.99static.com//X0F3CDfCL6LcdPsSJNtRXSGn86Q=/108x1101:902x1895/fit-in/500x500/99designs-contests-attachments/126/126736/attachment_126736972" alt="" className='rounded-lg'  style={{height:'100%',  }}/> */}
               {/* <Icon icon="mdi:bell-notification-outline" width="24" height="24" color='black' style={{color:'#fff'}} /> */}
               <Icon icon="flowbite:language-outline" width="100%" height="100%" />
               <Icon icon="mingcute:down-fill" width="50%" height="100%" />
           </i>
+          <button className='flex items-center justify-center'>
+
+            <i className='h-10 w-10  lg:hidden hover:text-red-700 rounded-lg flex right-12 absolute cursor-pointer'>
+                {/* <img src="https://images-platform.99static.com//X0F3CDfCL6LcdPsSJNtRXSGn86Q=/108x1101:902x1895/fit-in/500x500/99designs-contests-attachments/126/126736/attachment_126736972" alt="" className='rounded-lg'  style={{height:'100%',  }}/> */}
+                {/* <Icon icon="mdi:bell-notification-outline" width="24" height="24" color='black' style={{color:'#fff'}} /> */}
+                <Icon icon="cil:hamburger-menu" width="80%" height="80%" />
+                {/* <Icon icon="mingcute:down-fill" width="50%" height="100%" /> */}
+            </i>
+          </button>
 
       </div>
     </div>
