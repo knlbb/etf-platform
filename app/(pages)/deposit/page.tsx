@@ -3,8 +3,7 @@ import React from 'react'
 export default function Deposit() {
   return (
     <div className='flex justify-center'>
-      <div className='lg:w-96 sm:w-96 p-5 overflow-hidden items-center flex flex-col bg-white rounded-2xl shadow-md'>
-        {/* <h1 className='font-semibold text-lg mt-5'>Deposit</h1> */}
+      <div className='lg:w-96 sm:w-96 xs:w-80 p-5 overflow-hidden items-center flex flex-col bg-white rounded-2xl shadow-md'>
         <button type="button" className="inline-flex justify-center gap-x-1.5 rounded-md py-2 text-sm font-semibold text-gray-900 border px-3 hover:text-gray-500" id="menu-button" aria-expanded="true" aria-haspopup="true">
           USDT
           <svg className="-mr-1 h-5 w-5 text-black" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">

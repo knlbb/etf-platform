@@ -46,22 +46,3 @@ function Navbar() {
 }
 
 export default Navbar
-
-{/* <nav className='w-full p-5'>
-         <div className='max-w-7xl text-black bg-white mx-auto px-4 sm:px-6 lg:px-8 rounded-3xl'>
-            <div className='flex items-center justify-between h-16'>
-                <div className='flex flex-row w-full justify-between'>
-                    <div className='text-xl font-semibold'>
-                        ETF Tracker
-                    </div>
-                    <div className=''>
-                        <div className='flex ml-10 items-baseline space-x-2'>
-                            <button className="bg-blue-500 hover:bg-blue-700 text-white px-4 rounded">
-                                Button
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div> 
-     </nav>*/}

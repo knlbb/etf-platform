@@ -7,7 +7,7 @@ import Header from "@/components/header";
 import Sidebar from "@/components/Sidebar";
 import PageWrapper from "@/components/page-wrapper";
 import MarginWidthWrapper from "@/components/margin-width-wrapper";
-import Login from "./login/page";
+import Login from "./(pages)/login/page";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -26,7 +26,6 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className} style={{overflow: 'hidden'}}>
-        {/* <Navbar/> */}
         <div className="flex">
           {process.env.LOGGED_IN === "true" ? (
             <>
