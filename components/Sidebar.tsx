@@ -1,18 +1,15 @@
 'use client';
 
 import React, { useState } from 'react';
-
-import Link from 'next/link';
-import { usePathname } from 'next/navigation';
-
-import { SIDENAV_ITEMS } from '@/constants';
-import { SideNavItem } from '@/types';
 import { Icon } from '@iconify/react';
+
 
 function Sidebar() {
   const [chat, setChat] = useState(false)
 
+
   return (
+    <>
     <div className="lg:min-w-96 md:hidden right-0 bg-[#f2f6fe] h-screen flex-1 fixed hidden lg:flex">
       <div className="flex flex-col space-y-6 w-full mx-5">
         <div className="flex flex-row space-x-3 items-center justify-center md:justify-start md:px-6 border-b border-[#e7ecf5] h-24 w-full">
@@ -36,7 +33,6 @@ function Sidebar() {
       <div className={chat ? 'w-[75%] h-[50%] ml-5 rounded-2xl bg-white overflow-hidden bottom-5 absolute' : 'w-[90%] h-[50%] hidden rounded-2xl bg-white overflow-hidden bottom-5 right-5 absolute'}>
         <div className='w-full h-[15%] bg-black px-3 flex items-center'>
           <button onClick={() => setChat(false)} className=' rounded-xl bg-green-600 w-3 h-3'>
-            {/* <Icon icon="bx:support" className='text-white hover:text-red-800' width="100%" height="100%" /> */}
           </button>
           <h1 className='m-2 text-white'>
             ChatBot
@@ -45,11 +41,27 @@ function Sidebar() {
         <div className='p-5'>
           Chat here
         </div>
-        <div className='absolute bottom-0 h-[15%] bg-black w-full flex justify-center items-center'>
+        <div className='absolute bottom-0 h-[15%]  bg-black w-full flex justify-center items-center'>
           <input type="text" placeholder='Enter message here' className='w-[90%] text-white h-10 bg-transparent outline-none'/>
         </div>
       </div>
     </div>
+
+    {/* //mobile sidebar */}
+    <div className='w-screen lg:hidden absolute z-20 opacity-50 backdrop-blur-lg bg-black h-screen'>
+    </div>
+    <div className='w-96 lg:hidden right-0 z-20 bg-[#f2f6fe] h-screen fixed'>
+        <div className="flex flex-row space-x-3 items-center justify-center md:justify-start md:px-6 border-b border-[#e7ecf5] h-24 w-full">
+          {/* <span className="text-md text-[#4f588c] right-10 absolute hidden md:flex">email@email.com</span> */}
+        </div>
+        <div className='p-5'>
+
+          <div className='bg-white w-full rounded-2xl p-5'>
+            <h1 className='font-bold text-[#525a8e] mt-0 pt-0 text-lg'>1231 ETH</h1>
+          </div>
+        </div>
+     </div>
+    </>
   )
 }
 

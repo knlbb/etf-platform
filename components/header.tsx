@@ -8,16 +8,24 @@ import { usePathname } from 'next/navigation';
 import { SideNavItem } from '@/types';
 import { Icon } from '@iconify/react';
 
-
-
-import { useSelectedLayoutSegment } from 'next/navigation';
 import { SIDENAV_ITEMS } from '@/constants';
 
+const sidebarHandle = () => {
+  // return sidebar
+}
 
 const Header = () => {
-  const selectedLayout = useSelectedLayoutSegment();
+  const [sidebar, setSidebar] = useState(false)
+  
+
+  const handleSidebar = () => {
+    console.log('lik');
+    setSidebar(!sidebar)
+    sidebarHandle()
+  }
+
   return (
-    <div className={'sticky inset-x-0 top-0 z-30 w-full transition-all border-gray-200'}>
+    <div className={'sticky top-0  w-full transition-all border-gray-200'}>
       <div className='flex h-24 items-center justify-center px-4'>
         <div className='flex  items-center space-x-4'>
           
@@ -34,26 +42,26 @@ const Header = () => {
               <Icon icon="flowbite:language-outline" width="100%" height="100%" />
               <Icon icon="mingcute:down-fill" width="50%" height="100%" />
           </i>
-          <button className='flex items-center justify-center'>
-
+          <button onClick={handleSidebar} className='flex items-center justify-center'>
             <i className='h-10 w-10  lg:hidden hover:text-red-700 rounded-lg flex right-12 absolute cursor-pointer'>
                 <Icon icon="cil:hamburger-menu" width="80%" height="80%" />
             </i>
           </button>
 
+
       </div>
     </div>
+    
+
+
   )
 }
 
 export default Header
 
+
 const MenuItem = ({ item }: { item: SideNavItem }) => {
   const pathname = usePathname();
-  const [subMenuOpen, setSubMenuOpen] = useState(false);
-  const toggleSubMenu = () => {
-    setSubMenuOpen(!subMenuOpen);
-  };
 
   return (
     <div className="">

@@ -1,11 +1,24 @@
+'use client'
+
 import Link from 'next/link'
-import React from 'react'
+import React, { useState } from 'react'
 import { redirect } from 'next/navigation'
+import handleLogin from '../../hooks/login'
 
 function Login() {
     if (process.env.LOGGED_IN === "true"){
         redirect('dashboard')
     }
+
+    const [email, setEmail] = useState('')
+    const [password, setPassword] = useState('')
+
+
+    const submit = () => {
+        handleLogin(email, password)
+    }
+
+    
   return (
         <div className='justify-center bg-[#f7faff] flex flex-col items-center w-full h-screen'>
 
@@ -17,11 +30,11 @@ function Login() {
                 <h3 className="text-xl font-medium text-gray-900 dark:text-white">Sign in</h3>
                 <div>
                     <label className="text-sm font-medium text-gray-900 block mb-2 dark:text-gray-300">Your email</label>
-                    <input type="email" name="email" id="email" className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" placeholder="name@company.com" />
+                    <input onChange={e => setEmail(e.target.value)} type="email" name="email" id="email" className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" placeholder="name@company.com" />
                 </div>
                     <div>
                         <label  className="text-sm font-medium text-gray-900 block mb-2 dark:text-gray-300">Your password</label>
-                        <input type="password" name="password" id="password" placeholder="••••••••" className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" />
+                        <input type="password" onChange={e => setPassword(e.target.value)} name="password" id="password" placeholder="••••••••" className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" />
                     </div>
                         <div className="flex items-start">
                             <div className="flex items-start">
@@ -35,7 +48,7 @@ function Login() {
                                 <a href="#" className="text-sm text-blue-700 hover:underline ml-auto dark:text-blue-500">Lost
                                     Password?</a>
                             </div>
-                            <Link href='dashboard'>
+                            <Link onClick={submit} href='dashboard'>
                                 <button type="submit" className="w-full mt-5 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Login to your account</button>
                             </Link>
                             <div className="text-sm font-medium text-gray-500 dark:text-gray-300">

@@ -39,8 +39,9 @@ function Dashboard() {
     redirect('login')
   }
   return (
-    <div>
-      <div className="w-full  bg-white border rounded-xl">
+    <div className='overflow-hidden'>
+        <Ticker/>
+      <div className="w-full bg-white border rounded-xl">
           <header className="px-5 py-4 ">
               <div>
                 <h5 className="text-xs text-[#c5cade]">Sort By:</h5>

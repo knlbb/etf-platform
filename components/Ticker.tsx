@@ -63,7 +63,7 @@ function Ticker() {
   return (
     <>
     {/* add marquee to calss below */}
-        <div className="marquee rounded-2xl py-5 px-2">
+        <div className="marquee  md:w-[90vw]  lg:w-[72vw] sm:w-[90vw] xs:w-[70vw] rounded-2xl py-5 px-2">
             <span>
                 <div style={{display:'flex'}}>
                     {tickers.map((ticker) => {
