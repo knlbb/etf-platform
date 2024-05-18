@@ -1,6 +1,8 @@
+'use client'
 import React from 'react'
 import Ticker from "@/components/Ticker2"
 import { redirect } from 'next/navigation'
+import PortfolioChart from '../../../components/chart';
 
 const etfInfo = [
     {
@@ -30,6 +32,7 @@ const etfInfo = [
         dayVol: '$123.3 M',
         marketCap: '$4.3 T'
     },
+    
 ]
 
 
@@ -53,7 +56,7 @@ function Dashboard() {
                 </button>
               </div>
           </header>
-          <table className="table-auto w-full">
+          <table className="table-auto w-full overflow-y-scroll ">
             <thead className="text-xs text-gray-400">
                 <tr className="bg-gray-50 border-t h-10">
                     <th className="px-5 whitespace-nowrap">
@@ -79,7 +82,7 @@ function Dashboard() {
                     </th>
                 </tr>
             </thead>
-            <tbody className="text-sm divide-y divide-gray-100">
+            <tbody className="text-sm divide-y overflow-y-scroll divide-gray-100">
                 {etfInfo.map((i)=>{
                     return(
                     <tr className="h-16 border-t">
@@ -105,13 +108,17 @@ function Dashboard() {
                             <div className="text-left font-medium ">{i.marketCap}</div>
                         </td>
                         <td className="p-2 xxs:hidden whitespace-nowrap">
-                            <div className="text-lg flex justify-center text-center"><img src="https://miro.medium.com/v2/resize:fit:793/1*sRlmmFjU2hH0e7n4vqF4QA.png" className='w-auto h-12'/></div>
+                            <div className="text-lg flex justify-center text-center ">
+                                {/* <PortfolioChart/> */}
+                            </div>
                         </td>
                     </tr>)
                 })}
             </tbody>
         </table>
       </div>
+
+      
     </div>
   )
 }
