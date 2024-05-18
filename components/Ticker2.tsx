@@ -105,7 +105,7 @@ function Ticker2() {
   return (
     <div className="rounded-2xl overflow-hidden py-5 px-2 ">
             <div className=' overflow-hidden'>
-                <Flicking moveType="freeScroll" adaptive={true} bound={true}
+                <Flicking moveType="freeScroll" adaptive={true} 
                     plugins={_plugins}
                     cameraClass='hello'
                     inputType={["pointer", "touch", "mouse"]}

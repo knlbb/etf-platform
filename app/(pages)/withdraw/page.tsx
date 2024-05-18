@@ -1,22 +1,59 @@
-import React, { useState } from 'react'
+'use client'
+
+import React, { useState} from 'react'
+import { useTranslation } from 'next-i18next';
+import Link from 'next/link';
 
 
 export default function Withdraw() {
 
+  const { t } = useTranslation('common');
+
+
+  const [drop, setDrop] = useState(false)
+  const [currency, setCurrency] = useState('USDT')
+
+  function handleDropdown(){
+    console.log(drop);
+    setDrop(!drop)
+  }
+
+  const handleCurrencyChange = (e: React.MouseEvent<HTMLButtonElement>) => {
+      setCurrency(e.currentTarget.textContent!)
+      setDrop(!drop)
+  }
+
   return (
     <div className='flex justify-center'>
     <div className='lg:w-96 sm:w-96 xs:w-80 p-5 overflow-hidden items-center flex flex-col bg-white rounded-2xl shadow-md'>
-      <button type="button" className="inline-flex justify-center gap-x-1.5 rounded-md py-2 text-sm font-semibold text-gray-900 border px-3 hover:text-gray-500" id="menu-button" aria-expanded="true" aria-haspopup="true">
-        USDT
-        <svg className="-mr-1 h-5 w-5 text-black" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-          <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
-        </svg>
-      </button>
+    <button onClick={handleDropdown} type="button" className="inline-flex justify-center items-center gap-x-1.5 w-1/4 rounded-md py-2 text-sm font-semibold text-gray-900 border px-3 hover:text-gray-500" id="menu-button" aria-expanded="true" aria-haspopup="true">
+            {currency}
+            <img src="https://icons.veryicon.com/png/o/internet--web/prejudice/down-arrow-5.png" alt="" className='w-4' />
+          </button>
+        {drop ? (
+          <div className={"mt-10 justify-center gap-x-1.5  w-auto rounded-md py-2 text-sm font-semibold bg-white shadow-md absolute p-4 text-gray-900 border px-3" }>
+            <button onClick={handleCurrencyChange} className='hover:text-gray-300  justify-center items-center w-full py-4 '>
+              BTC
+            </button>
+            <button onClick={handleCurrencyChange} className='hover:text-gray-300 justify-center items-center w-full py-4 '>
+              USDC
+            </button>
+            <button onClick={handleCurrencyChange} className='hover:text-gray-300 justify-center items-center w-full py-4 '>
+              ETH
+            </button>
+            <button onClick={handleCurrencyChange} className='hover:text-gray-300 justify-center items-center w-full py-4 '>
+              SOL
+            </button>
+          </div>
+
+        ):(<></>)}
       
       <div className='w-full'>
-        <h1 className='text-sm mt-5 ml-2 font-semibold text-[#b4b7ce]'>Deposit Address:</h1>
+        <h1 className='text-sm mt-5 ml-2 font-semibold text-[#b4b7ce]'>{t('DepositAddress')}:</h1>
         <input className='w-full rounded-xl mt-2 h-12 border p-5 outline-none'  placeholder='Enter amount'/>
       </div>
+      <Link href="/withdraw" locale="en">English</Link>
+      <Link href="/withdraw" locale="fr">Français</Link>
       <div className='w-full'>
         <h1 className='text-sm mt-5 ml-2 font-semibold text-[#b4b7ce]'>Deposit Amount:</h1>
         <input className='w-full rounded-xl mt-2 h-12 border p-5 outline-none'  placeholder='Enter amount'/>

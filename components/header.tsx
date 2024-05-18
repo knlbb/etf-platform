@@ -10,19 +10,12 @@ import { Icon } from '@iconify/react';
 
 import { SIDENAV_ITEMS } from '@/constants';
 
-const sidebarHandle = () => {
-  // return sidebar
-}
+type HeaderProps = {
+  toggleSidebar: () => void;
+};
 
-const Header = () => {
-  const [sidebar, setSidebar] = useState(false)
-  
 
-  const handleSidebar = () => {
-    console.log('lik');
-    setSidebar(!sidebar)
-    sidebarHandle()
-  }
+const Header: React.FC<HeaderProps> = ({ toggleSidebar }) => {
 
   return (
     <div className={'sticky top-0  w-full transition-all border-gray-200'}>
@@ -42,7 +35,7 @@ const Header = () => {
               <Icon icon="flowbite:language-outline" width="100%" height="100%" />
               <Icon icon="mingcute:down-fill" width="50%" height="100%" />
           </i>
-          <button onClick={handleSidebar} className='flex items-center justify-center'>
+          <button onClick={toggleSidebar} className='flex items-center justify-center'>
             <i className='h-10 w-10  lg:hidden hover:text-red-700 rounded-lg flex right-12 absolute cursor-pointer'>
                 <Icon icon="cil:hamburger-menu" width="80%" height="80%" />
             </i>

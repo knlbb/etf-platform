@@ -97,3 +97,50 @@
     0%   { transform: translate(0, 0); }
     100% { transform: translate(-100%, 0); }
 }
+
+
+
+
+
+
+
+/* components/styles.css */
+.sidebar {
+  width: 24rem;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  right: -24rem;
+  transition: right 0.3s ease;
+}
+
+.sidebar.visible {
+  right: 0;
+}
+
+.close-button {
+  display: flex;
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .hamburger-button {
+    display: block;
+  }
+
+  .sidebar {
+    right: -24rem;
+    top: 0;
+  }
+
+  .sidebar.visible {
+    right: 0;
+  }
+
+  .close-button {
+    display: block;
+  }
+}
