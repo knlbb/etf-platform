@@ -52,8 +52,8 @@ export default function Withdraw() {
         <h1 className='text-sm mt-5 ml-2 font-semibold text-[#b4b7ce]'>{t('DepositAddress')}:</h1>
         <input className='w-full rounded-xl mt-2 h-12 border p-5 outline-none'  placeholder='Enter amount'/>
       </div>
-      <Link href="/withdraw" locale="en">English</Link>
-      <Link href="/withdraw" locale="fr">Français</Link>
+      {/* <Link href="/withdraw" locale="en">English</Link> */}
+      {/* <Link href="/withdraw" locale="fr">Français</Link> */}
       <div className='w-full'>
         <h1 className='text-sm mt-5 ml-2 font-semibold text-[#b4b7ce]'>Deposit Amount:</h1>
         <input className='w-full rounded-xl mt-2 h-12 border p-5 outline-none'  placeholder='Enter amount'/>

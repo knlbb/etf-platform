@@ -20,9 +20,11 @@ const Header: React.FC<HeaderProps> = ({ toggleSidebar }) => {
   return (
     <div className={'sticky top-0  w-full transition-all border-gray-200'}>
       <div className='flex h-24 items-center justify-center px-4'>
-        <div className='flex  items-center space-x-4'>
+        <div className='flex items-center space-x-4'>
           
-          <img src='https://play-lh.googleusercontent.com/Fh6qQqnzTc1PctcLekAHWG2WqnzCFbAwGYEdA48rVdwAso5Ws4CCe54IUylGEb-F8I8' className='w-12 rounded-2xl absolute left-12 h-12'/>
+          <Link href={'/'} className='w-12 absolute left-12 h-12'>
+          <img src='https://play-lh.googleusercontent.com/Fh6qQqnzTc1PctcLekAHWG2WqnzCFbAwGYEdA48rVdwAso5Ws4CCe54IUylGEb-F8I8' className='rounded-2xl '/>
+          </Link>
 
           <div className='hidden flex-row space-x-3 sm:hidden lg:flex md:flex items-center text-center justify-center '>
             {SIDENAV_ITEMS.map((item, idx) => {
