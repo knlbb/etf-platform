@@ -29,7 +29,6 @@ function Login() {
 
         <img src='https://play-lh.googleusercontent.com/Fh6qQqnzTc1PctcLekAHWG2WqnzCFbAwGYEdA48rVdwAso5Ws4CCe54IUylGEb-F8I8' className='w-12 top-24 absolute rounded-2xl h-12'/>
 
-
         <div className="bg-white shadow-md border border-gray-200 rounded-lg max-w-sm w-[25%] sm:w-[90%] p-4 sm:p-6 lg:p-8 dark:bg-gray-800 dark:border-gray-700">
             <form className="space-y-6" action="#">
                 <h3 className="text-xl font-medium text-gray-900 dark:text-white">Sign in</h3>
