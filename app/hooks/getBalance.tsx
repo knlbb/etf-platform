@@ -6,7 +6,7 @@ function GetBalance() {
   useEffect(() => {
     async function fetchBalances() {
       try {
-        const response = await fetch('/balances', {
+        const response = await fetch(`${process.env.URL}/balances`, {
           credentials: 'include'
         });
         if (!response.ok) {

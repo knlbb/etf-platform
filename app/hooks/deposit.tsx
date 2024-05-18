@@ -11,7 +11,7 @@ function Deposit() {
           txId: 'transaction_id' 
         };
 
-        const response = await fetch('/deposit/create', {
+        const response = await fetch(`${process.env.URL}/deposit/create`, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json'

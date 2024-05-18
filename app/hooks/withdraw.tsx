@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 function Withdraw() {
     async function withdrawFunds(user: any, withdrawalData: any) {
         try {
-          const response = await fetch('/withdraw', {
+          const response = await fetch(`${process.env.URL}/withdraw`, {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json',
@@ -32,7 +32,7 @@ function Withdraw() {
 
       async function validateWithdrawal(withdrawalId: string) {
         try {
-          const response = await fetch('/withdraw/forestadmin/validate', {
+          const response = await fetch(`${process.env.URL}/withdraw/forestadmin/validate`, {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json',
@@ -55,7 +55,7 @@ function Withdraw() {
 
       async function rejectWithdrawal(withdrawalId: string) {
         try {
-          const response = await fetch('withdraw/forestadmin/reject', {
+          const response = await fetch(`${process.env.URL}/withdraw/forestadmin/reject`, {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json',

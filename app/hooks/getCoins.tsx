@@ -6,7 +6,7 @@ function GetCoins() {
   useEffect(() => {
     async function fetchCoins() {
       try {
-        const response = await fetch('/coins/forestadmin/list');
+        const response = await fetch(`${process.env.URL}/coins/forestadmin/list`);
         if (!response.ok) {
           throw new Error('Failed to fetch coins');
         }

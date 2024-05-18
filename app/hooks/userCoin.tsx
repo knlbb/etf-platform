@@ -6,7 +6,7 @@ function UserCoin() {
   useEffect(() => {
     async function fetchBalances() {
       try {
-        const response = await fetch('/usercoins/spotBalances', {
+        const response = await fetch(`${process.env.URL}/usercoins/spotBalances`, {
           method: 'GET',
           headers: {
             'Content-Type': 'application/json',
@@ -27,7 +27,7 @@ function UserCoin() {
     
     async function fetchTotalSpotBalanceUsd() {
         try {
-            const response = await fetch('/usercoins/forestadmin/totalSpotBalanceUsd', {
+            const response = await fetch(`${process.env.URL}/usercoins/forestadmin/totalSpotBalanceUsd`, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
@@ -51,7 +51,7 @@ function UserCoin() {
     async function payCommission() {
         const payload = { userId: 'user_id_here', amount: 100, symbol: 'BTC' };
         try {
-            const response = await fetch('http://your-nestjs-backend/usercoins/forestadmin/payCommission', {
+            const response = await fetch(`${process.env.URL}/usercoins/forestadmin/payCommission`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

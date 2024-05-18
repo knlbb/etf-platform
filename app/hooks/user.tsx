@@ -11,7 +11,7 @@ interface RegisterBody {
   }
 
     
-    const API_BASE_URL = process.env.URL; // Replace this with your actual API base URL
+    const API_BASE_URL = process.env.URL; 
 
     // Helper function to handle fetch response
     const handleResponse = async (response: Response) => {
