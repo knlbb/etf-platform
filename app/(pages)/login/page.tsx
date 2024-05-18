@@ -3,22 +3,24 @@
 import Link from 'next/link'
 import React, { useState } from 'react'
 import { redirect } from 'next/navigation'
-// import handleLogin from '../../hooks/login'
-
-// import { useAuth } from '../../../components/AuthProvider';
+import User from '@/app/hooks/user'
+import { LoginBody } from '../../../utils/types';
 
 function Login() {
     if (process.env.LOGGED_IN === "true"){
         redirect('dashboard')
     }
-
+    
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
 
-    // const {login} = useAuth()
-
+    const loginBody: LoginBody = {
+        email: email,
+        password: password
+    }
+    
     const handleLogin = () => {
-        // login(email, password)
+        User.login(loginBody);
     }
 
     
